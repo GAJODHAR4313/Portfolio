@@ -6,10 +6,10 @@ const skills = [
   { name: 'Photoshop', img: '/Images/photoshop.png' },
   { name: 'HTML5', img: '/Images/html.png' },
   { name: 'CSS3', img: '/Images/css.png' },
-  { name: 'JavaScript', img: 'public/Images/java.png' },
-  { name: 'React.js', img: 'public/Images/react.png' },
-  { name: 'Framer', img: 'public/Images/framer.png' },
-  { name: 'Python', img: 'public/Images/python.png' },
+  { name: 'JavaScript', img: '/Images/java.png' },
+  { name: 'React.js', img: '/Images/react.png' },
+  { name: 'Framer', img: '/Images/framer.png' },
+  { name: 'Python', img: '/Images/python.png' },
 ];
 
 const SPEED = 60;
