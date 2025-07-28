@@ -2,7 +2,7 @@ import React, { useRef, useEffect, useState, useCallback } from 'react';
 import { useAnimationFrame } from 'framer-motion';
 
 const skills = [
-  { name: 'Figma', img: 'public/Images/image-removebg-preview-7 copy.png' },
+  { name: 'Figma', img: '/Images/figma.png' },
   { name: 'Photoshop', img: 'public/Images/Android Compact - 1.png/public/icons/image-removebg-preview-8.png' },
   { name: 'HTML5', img: 'public/Images/Android Compact - 1.png/public/icons/image-removebg-preview-9 copy.png' },
   { name: 'CSS3', img: 'public/Images/Android Compact - 1.png/public/icons/image-removebg-preview-10 copy.png' },
