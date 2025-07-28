@@ -8,13 +8,13 @@ const Work = ({ theme }) => {
       description: "A modern Website UI design created in Figma.",
       figmaLink:
         "https://www.figma.com/proto/ASyqImgOwUxbzmErIn3XQX/Cloth-Shopping?page-id=0%3A1&team_id=1511594455523695529&node-id=1-2&starting-point-node-id=1%3A2&t=ZZiZ3IdFXPvM6Tu8-1",
-      thumbnail: "public/Images/409shots_so copy.png",
+      thumbnail: "/Images/ui ux.png",
     },
     {
       title: "Website Prototype",
       description: "Interactive website wireframe built using Figma.",
       figmaLink: "https://www.figma.com/file/your-figma-link",
-      thumbnail: "public/Images/project1.png",
+      thumbnail: "/Images/project1.png",
     },
   ];
 
@@ -33,10 +33,10 @@ const Work = ({ theme }) => {
     >
       {/* Heading */}
       <motion.h2
-        initial={{ opacity: 0, scale: 0.5, y: 50 }}
+        initial={{ opacity: 0, scale: 0.7, y: 30 }}
         whileInView={{ opacity: 1, scale: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 1.0, ease: 'easeOut' }}
+        transition={{ duration: 0.5, ease: 'easeOut' }}
         className={`text-center text-3xl sm:text-4xl lg:text-5xl font-bold mb-10 ${headingColor}`}
       >
         My Work
@@ -45,10 +45,10 @@ const Work = ({ theme }) => {
       {/* Cards container */}
       <motion.div
         className="flex flex-wrap justify-center gap-6 sm:gap-8 lg:gap-10 max-w-5xl w-full"
-        initial={{ opacity: 0, scale: 0.3, y: 100 }}
+        initial={{ opacity: 0, scale: 0.5, y: 80 }}
         whileInView={{ opacity: 1, scale: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 1.0 , ease: 'easeOut' }}
+        transition={{ duration: 0.5, ease: 'easeOut' }}
       >
         {projects.map((project, i) => (
           <ProjectCard

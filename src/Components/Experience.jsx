@@ -29,32 +29,32 @@ const Experience = ({ theme }) => {
       id="Experience"
       className={`${bgColor} ${textColor} py-12 sm:py-16 px-4 sm:px-6 md:px-16 lg:px-24 relative overflow-hidden`}
     >
-    
+      {/* Heading */}
       <motion.h2
         className={`text-3xl sm:text-4xl lg:text-5xl font-bold text-center mb-10 sm:mb-14 ${headingColor}`}
         initial={{ opacity: 0, y: 50, scale: 0.8 }}
         whileInView={{ opacity: 1, y: 0, scale: 1 }}
         viewport={{ once: true, amount: 0.3 }}
-        transition={{ duration: 0.6, ease: 'easeOut' }}
+        transition={{ duration: 0.4, ease: 'easeOut' }}
       >
         💼 Experience
       </motion.h2>
 
-   
+      {/* Experience cards */}
       <motion.div
         className="relative flex flex-col gap-8 sm:gap-10"
         initial={{ opacity: 0, y: 60, scale: 0.85 }}
         whileInView={{ opacity: 1, y: 0, scale: 1 }}
         viewport={{ once: true, amount: 0.3 }}
-        transition={{ duration: 0.7, ease: 'easeOut' }}
+        transition={{ duration: 0.5, ease: 'easeOut' }}
       >
         {experiences.map((exp, index) => (
           <motion.div
             key={index}
             className="relative group"
-            whileHover={{ scale: 1.02 }}
+            whileHover={{ scale: 1.03 }}
+            transition={{ duration: 0.2, ease: 'easeOut' }}
           >
-            
             <div
               className={`p-4 sm:p-5 rounded-xl border border-purple-500/30 shadow-lg transition group-hover:shadow-purple-500/40 ${cardBg}`}
             >

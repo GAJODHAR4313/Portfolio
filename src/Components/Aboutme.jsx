@@ -20,6 +20,7 @@ const AboutMe = ({ theme }) => {
   return (
     <div className={`relative ${bgColor} ${textColor} min-h-screen px-4 sm:px-6 py-8 sm:py-12 flex items-center justify-center overflow-hidden`}>
 
+      {/* Floating Icons */}
       <FaReact
         className={`absolute text-[60px] sm:text-[80px] opacity-20 animate-float-slow ${theme === 'dark' ? 'text-[#61DBFB]' : 'text-[#6C63FF]'}`}
         style={{ top: '20%', left: '5%' }}
@@ -33,22 +34,22 @@ const AboutMe = ({ theme }) => {
         style={{ bottom: '10%', left: '8%' }}
       />
       <FaCode
-        className={`absolute text-[65px] sm:text-[90px] opacity-15 animate-float-slow ${theme === 'dark' ? 'text-green-400' : 'text-green-600]'}`}
+        className={`absolute text-[65px] sm:text-[90px] opacity-15 animate-float-slow ${theme === 'dark' ? 'text-green-400' : 'text-green-600'}`}
         style={{ bottom: '5%', right: '12%' }}
       />
 
       <div className="relative z-10 flex flex-col lg:flex-row gap-8 sm:gap-16 max-w-7xl mx-auto items-center">
-   
-       <div className="w-[220px] sm:w-[260px] lg:w-[300px] h-[250px] sm:h-[300px] lg:h-[350px] rounded-2xl overflow-hidden shadow-lg border-4  mt-18 border-[#6C63FF]">
-  <img
-    src="public/Images/Android Compact - 1.png/public/icons/0A0DB5D8-7331-49B1-94A0-F8D4457A60C4 copy.JPG"
-    alt="Yashraj"
-    className="w-full h-full object-cover object-top"
-  />
-</div>
 
+        {/* Profile Image */}
+        <div className="w-[220px] sm:w-[260px] lg:w-[300px] h-[250px] sm:h-[300px] lg:h-[350px] rounded-2xl overflow-hidden shadow-lg border-4 mt-18 border-[#6C63FF]">
+          <img
+            src="/Images/profile.JPG"
+            alt="Yashraj"
+            className="w-full h-full object-cover object-top"
+          />
+        </div>
 
-
+        {/* About Text & Buttons */}
         <div className="lg:w-2/3 w-full flex flex-col justify-center text-center lg:text-left">
           <h1 className={`text-3xl sm:text-5xl font-semibold tracking-tight ${headingColor} transition-all duration-700 ease-in-out`}>
             {isEnglish ? (
@@ -64,8 +65,9 @@ const AboutMe = ({ theme }) => {
           </p>
 
           <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+            {/* View Resume Button */}
             <a
-              href="public/Images/Android Compact - 1.png/public/icons/WhatsApp Image 2025-07-21 at 15.29.52 copy.pdf"
+              href="/Images/resume.png"
               target="_blank"
               rel="noopener noreferrer"
               className={`inline-block px-4 py-2 text-sm sm:text-base font-medium rounded-md shadow-md transition duration-300
@@ -73,9 +75,11 @@ const AboutMe = ({ theme }) => {
             >
               View Resume
             </a>
+
+            {/* Download Resume Button */}
             <a
-              href="/resume.pdf"
-              download="Yashraj_Resume.pdf"
+              href="/Images/resume.png"
+              download="Yashraj_Resume.png"
               className={`inline-block px-4 py-2 text-sm sm:text-base font-medium rounded-md shadow-md transition duration-300
                 ${theme === 'dark' ? 'bg-[#A1A1A1] text-black hover:bg-[#C1C1C1]' : 'bg-gray-300 text-black hover:bg-gray-400'}`}
             >

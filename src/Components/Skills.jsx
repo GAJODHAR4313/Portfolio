@@ -3,13 +3,13 @@ import { useAnimationFrame } from 'framer-motion';
 
 const skills = [
   { name: 'Figma', img: '/Images/figma.png' },
-  { name: 'Photoshop', img: 'public/Images/Android Compact - 1.png/public/icons/image-removebg-preview-8.png' },
-  { name: 'HTML5', img: 'public/Images/Android Compact - 1.png/public/icons/image-removebg-preview-9 copy.png' },
-  { name: 'CSS3', img: 'public/Images/Android Compact - 1.png/public/icons/image-removebg-preview-10 copy.png' },
-  { name: 'JavaScript', img: 'public/Images/image-removebg-preview-11 copy.png' },
-  { name: 'React.js', img: 'public/Images/image-removebg-preview-12.png' },
-  { name: 'Framer', img: 'public/Images/image-removebg-preview-13 copy.png' },
-  { name: 'Python', img: 'public/Images/image-removebg-preview-14.png' },
+  { name: 'Photoshop', img: '/Images/photoshop.png' },
+  { name: 'HTML5', img: '/Images/html.png' },
+  { name: 'CSS3', img: '/Images/css.png' },
+  { name: 'JavaScript', img: 'public/Images/java.png' },
+  { name: 'React.js', img: 'public/Images/react.png' },
+  { name: 'Framer', img: 'public/Images/framer.png' },
+  { name: 'Python', img: 'public/Images/python.png' },
 ];
 
 const SPEED = 60;

@@ -39,13 +39,11 @@ const Navbar = ({ theme, toggleTheme }) => {
     return () => window.removeEventListener('scroll', handleScrollEvent);
   }, []);
 
-  // Color based on theme
   const activeTextColor = theme === 'dark' ? 'text-yellow-400' : 'text-indigo-600';
   const hoverUnderlineColor = theme === 'dark' ? 'bg-yellow-400' : 'bg-indigo-600';
 
   return (
     <header className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 w-[95%] max-w-7xl px-6 py-2 bg-[#1a1a1a]/60 backdrop-blur-md border border-white/10 rounded-full shadow-md transition-all font-sans">
-      
       <div className="flex justify-between items-center w-full">
         {/* Logo */}
         <div className="flex items-center">
@@ -90,7 +88,7 @@ const Navbar = ({ theme, toggleTheme }) => {
                 {theme === 'dark' ? (
                   <FiSun size={20} className="text-yellow-400 drop-shadow-[0_0_4px_rgba(255,255,0,0.5)]" />
                 ) : (
-                  <FiMoon size={20} className="text-gray-800 drop-shadow-[0_0_3px_rgba(0,0,0,0.5)]" />
+                  <FiMoon size={20} className="text-yellow-400 drop-shadow-[0_0_4px_rgba(255,255,0,0.5)]" />
                 )}
               </span>
             </button>
@@ -137,7 +135,7 @@ const Navbar = ({ theme, toggleTheme }) => {
               {theme === 'dark' ? (
                 <FiSun size={22} className="text-yellow-400 drop-shadow-[0_0_4px_rgba(255,255,0,0.5)]" />
               ) : (
-                <FiMoon size={22} className="text-gray-800 drop-shadow-[0_0_3px_rgba(0,0,0,0.5)]" />
+                <FiMoon size={22} className="text-yellow-400 drop-shadow-[0_0_4px_rgba(255,255,0,0.5)]" />
               )}
             </span>
           </button>
