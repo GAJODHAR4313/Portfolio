@@ -14,7 +14,7 @@ const Work = ({ theme }) => {
       title: "Website Prototype",
       description: "Interactive website wireframe built using Figma.",
       figmaLink: "https://www.figma.com/file/your-figma-link",
-      thumbnail: "/Images/project1.png",
+      thumbnail:"https://via.placeholder.com/200",
     },
   ];
 
