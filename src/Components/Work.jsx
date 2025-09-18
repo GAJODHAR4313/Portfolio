@@ -11,54 +11,48 @@ const Work = ({ theme }) => {
       thumbnail: "/Images/ui ux.png",
     },
     {
-      title: "Website Prototype",
-      description: "Interactive website wireframe built using Figma.",
-      figmaLink: "https://www.figma.com/file/your-figma-link",
-      thumbnail:"https://via.placeholder.com/200",
+      title: "Avengers Shooting Game",
+      description: "Interactive Game built in React.",
+      figmaLink: "https://yashr01.vercel.app/",
+      thumbnail: "public/Images/avengers-doomsday-final-battle-art-by-v0-r3lv01t90gue1.jpeg copy.webp",
     },
   ];
 
-  // Theme tokens
-  const bgColor = theme === 'dark' ? 'bg-[#060026]' : 'bg-[#F8F9FA]';
-  const headingColor = theme === 'dark' ? 'text-white' : 'text-[#2D2D2D]';
-  const cardBg = theme === 'dark' ? 'bg-[#060026] border-white/10' : 'bg-white border-gray-200';
-  const btnBg = theme === 'dark' ? 'bg-[#651AAC] hover:bg-[#6C63FF]' : 'bg-[#6C63FF] hover:bg-[#574bff]';
-  const gradFrom = theme === 'dark' ? 'from-[#651AAC]' : 'from-[#6C63FF]';
-  const gradTo = theme === 'dark' ? 'to-[#FFD86D]' : 'to-[#FF6584]';
+  const bgColor = theme === 'dark' ? 'bg-[#000000]' : 'bg-[#E8DDC9]';
+  const headingColor = 'text-sky-500';
+  const textColor = theme === 'dark' ? 'text-[#EDEDED]' : 'text-[#1C1C1C]';
 
   return (
     <section
       id="Work"
-      className={`min-h-screen ${bgColor} flex flex-col justify-center items-center px-4 sm:px-6 lg:px-12`}
+      className={`min-h-screen ${bgColor} ${textColor} flex flex-col justify-center items-center px-4 sm:px-6 lg:px-12 py-12`}
     >
-      {/* Heading */}
+      {/* Section Heading */}
       <motion.h2
         initial={{ opacity: 0, scale: 0.7, y: 30 }}
         whileInView={{ opacity: 1, scale: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.5, ease: 'easeOut' }}
-        className={`text-center text-3xl sm:text-4xl lg:text-5xl font-bold mb-10 ${headingColor}`}
+        transition={{ duration: 0.6, ease: 'easeOut' }}
+        className="text-center text-3xl sm:text-4xl lg:text-5xl font-bold mb-10 text-sky drop-shadow-lg"
       >
         My Work
       </motion.h2>
 
-      {/* Cards container */}
+      {/* Cards */}
       <motion.div
         className="flex flex-wrap justify-center gap-6 sm:gap-8 lg:gap-10 max-w-5xl w-full"
         initial={{ opacity: 0, scale: 0.5, y: 80 }}
         whileInView={{ opacity: 1, scale: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.5, ease: 'easeOut' }}
+        transition={{ duration: 0.7, ease: 'easeOut' }}
       >
-        {projects.map((project, i) => (
+        {projects.map((project, index) => (
           <ProjectCard
-            key={i}
+            key={index}
             project={project}
-            cardBg={cardBg}
-            gradFrom={gradFrom}
-            gradTo={gradTo}
-            btnBg={btnBg}
             headingColor={headingColor}
+            textColor={textColor}
+            theme={theme}
           />
         ))}
       </motion.div>
@@ -66,42 +60,54 @@ const Work = ({ theme }) => {
   );
 };
 
-const ProjectCard = ({ project, cardBg, gradFrom, gradTo, btnBg, headingColor }) => (
+const ProjectCard = ({ project, headingColor, textColor, theme }) => (
   <div
-    className={`group relative rounded-xl sm:rounded-2xl border overflow-hidden
+    className={`group relative rounded-xl border overflow-hidden
+      ${theme === 'dark' ? 'bg-black/40' : 'bg-white/40'} 
+      border-red-500/60 backdrop-blur-md 
       shadow-[0_3px_15px_-3px_rgba(0,0,0,0.4)]
-      hover:shadow-[0_6px_25px_-2px_rgba(108,99,255,0.5)]
-      transform transition-transform duration-300 hover:scale-105 ${cardBg} ${headingColor}`}
+      hover:shadow-[0_8px_30px_rgba(255,0,0,0.6)]
+      transition-all duration-700 ease-in-out hover:scale-105 ${textColor}`}
     style={{ width: "350px" }}
   >
-    {/* Hover Glow */}
-    <div
-      className={`pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition
-      bg-gradient-to-br ${gradFrom} ${gradTo} blur-lg`}
-    />
-
-    {/* Content */}
-    <div className="relative z-10 flex flex-col h-full">
+    {/* Image */}
+    <div className="relative w-full h-44 sm:h-52 lg:h-60 overflow-hidden">
       <img
         src={project.thumbnail}
         alt={project.title}
-        className="w-full h-44 sm:h-52 lg:h-60 object-cover"
+        className="w-full h-full object-cover transform group-hover:scale-110 group-hover:brightness-110 transition-all duration-700"
         loading="lazy"
       />
-      <div className="p-4 sm:p-5 lg:p-6 flex flex-col flex-1">
-        <h3 className="text-lg sm:text-xl lg:text-2xl font-semibold mb-2">{project.title}</h3>
-        <p className="text-sm sm:text-base mb-4 flex-1">{project.description}</p>
-        <a
-          href={project.figmaLink}
-          target="_blank"
-          rel="noopener noreferrer"
-          className={`inline-block px-3 sm:px-4 py-2 rounded-md sm:rounded-lg text-white text-sm sm:text-base transition-colors ${btnBg}`}
-        >
-          View Figma
-        </a>
+    </div>
+
+    {/* Content */}
+    <div className="p-5 flex flex-col flex-1 justify-between min-h-[220px]">
+      <div>
+        <h3 className={`text-lg sm:text-xl lg:text-2xl font-bold mb-2 ${headingColor}`}>
+          {project.title}
+        </h3>
+        <p className="text-sm sm:text-base opacity-90">
+          {project.description}
+        </p>
       </div>
+
+      {/* Button - Black with Blue Border → Hover Red Border */}
+      <a
+        href={project.figmaLink}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="mt-4 w-full text-center px-5 py-2.5 rounded-md font-semibold
+          bg-black text-white border-2 border-blue-500
+          hover:border-red-500
+          transition-all duration-500 ease-in-out"
+      >
+        Tap Here For Experience
+      </a>
     </div>
   </div>
 );
+
+
+
 
 export default Work;

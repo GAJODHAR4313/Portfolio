@@ -10,26 +10,27 @@ const Footer = ({ theme }) => {
     }
   };
 
-  const bgColor = theme === 'dark' ? 'bg-[#060026]' : 'bg-white';
-  const textColor = theme === 'dark' ? 'text-[#A1A1A1]' : 'text-[#2D2D2D]';
-  const headingColor = theme === 'dark' ? 'text-white' : 'text-[#2D2D2D]';
-  const accent = theme === 'dark' ? 'from-[#651AAC] to-[#FFD86D]' : 'from-[#6C63FF] to-[#FF6584]';
+  // Theme Colors
+  const bgColor = theme === 'dark' ? 'bg-black' : 'bg-[#E8DDC9]';
+  const textColor = theme === 'dark' ? 'text-[#EDEDED]' : 'text-[#1C1C1C]';
+  const headingColor = theme === 'dark' ? 'text-white' : 'text-black';
+  const subHeadingColor = 'text-[#FF0000]';
+  const hoverColor = theme === 'dark' ? 'hover:text-[#A1A1A1]' : 'hover:text-[#2D2D2D]';
+  const borderColor = theme === 'dark' ? 'border-t border-white' : 'border-t border-black';
+
+  const emailBtnClass =
+    theme === 'dark'
+      ? 'bg-[#1E90FF] text-white'
+      : 'bg-black text-white';
 
   return (
     <footer
       id="Contact"
-      className={`relative overflow-hidden ${bgColor} border-t border-gray-300 text-sm`}
+      className={`relative overflow-hidden ${bgColor} ${borderColor} text-sm`}
     >
-      {/* Decorative blurred gradient */}
-      <div
-        className={`pointer-events-none absolute -top-16 -right-16 w-56 h-56 bg-gradient-to-br ${accent} opacity-20 blur-[100px]`}
-      />
-      <div
-        className={`pointer-events-none absolute -bottom-16 -left-16 w-56 h-56 bg-gradient-to-tr ${accent} opacity-10 blur-[90px]`}
-      />
-
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 md:px-10 lg:px-12 py-8 md:py-10">
         <div className="grid gap-8 sm:gap-10 md:gap-8 md:grid-cols-2 lg:grid-cols-4 text-[13px] sm:text-sm">
+          
           {/* Brand */}
           <div>
             <h3 className={`text-lg sm:text-xl font-bold tracking-wide ${headingColor}`}>
@@ -38,28 +39,34 @@ const Footer = ({ theme }) => {
             <p className={`mt-2 leading-relaxed text-xs sm:text-sm ${textColor}`}>
               Passionate about design, code, deploy. Full stack excellence.
             </p>
-          </div>
+          </div>        
 
           {/* Quick Links */}
           <div>
-            <h4
-              className={`font-semibold mb-2 text-xs sm:text-sm uppercase tracking-wider ${headingColor}`}
-            >
+            <h4 className={`font-semibold mb-2 text-xs sm:text-sm uppercase tracking-wider ${subHeadingColor}`}>
               Navigate
             </h4>
             <ul className="space-y-1">
               <li>
                 <button
-                  onClick={() => handleScroll('Services')}
-                  className={`${textColor} hover:text-[#6C63FF]`}
+                  onClick={() => handleScroll('Aboutme')}
+                  className={`${textColor} ${hoverColor} transition duration-300 ease-in-out`}
                 >
-                  Services
+                  AboutMe
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => handleScroll('Work')}
+                  className={`${textColor} ${hoverColor} transition duration-300 ease-in-out`}
+                >
+                  Work
                 </button>
               </li>
               <li>
                 <button
                   onClick={() => handleScroll('Skills')}
-                  className={`${textColor} hover:text-[#6C63FF]`}
+                  className={`${textColor} ${hoverColor} transition duration-300 ease-in-out`}
                 >
                   Skills
                 </button>
@@ -67,47 +74,45 @@ const Footer = ({ theme }) => {
               <li>
                 <button
                   onClick={() => handleScroll('Experience')}
-                  className={`${textColor} hover:text-[#6C63FF]`}
+                  className={`${textColor} ${hoverColor} transition duration-300 ease-in-out`}
                 >
-                  Experience
+                  Experience 
                 </button>
               </li>
             </ul>
           </div>
 
-          {/* Contact */}
+          {/* Contact Info */}
           <div>
-            <h4
-              className={`font-semibold mb-2 text-xs sm:text-sm uppercase tracking-wider ${headingColor}`}
-            >
-              Contact
+            <h4 className={`font-semibold mb-2 text-xs sm:text-sm uppercase tracking-wider ${subHeadingColor}`}>
+              Contact:
             </h4>
             <ul className="space-y-1 text-xs sm:text-sm">
               <li>
-                <span className="text-[#6C63FF]">Phone:</span>{' '}
+                <span className={subHeadingColor}>Phone:</span>{' '}
                 <a
                   href="tel:+919823129836"
-                  className={`${textColor} hover:text-[#6C63FF] transition`}
+                  className={`${textColor} ${hoverColor} transition duration-300 ease-in-out`}
                 >
                   +91 9823129836
                 </a>
               </li>
               <li className="break-all">
-                <span className="text-[#6C63FF]">Email:</span>{' '}
+                <span className={subHeadingColor}>Email:</span>{' '}
                 <a
                   href="mailto:imrajputyashraj@gmail.com"
-                  className={`${textColor} hover:text-[#6C63FF] transition`}
+                  className={`${textColor} ${hoverColor} transition duration-300 ease-in-out`}
                 >
                   imrajputyashraj@gmail.com
                 </a>
               </li>
               <li>
-                <span className="text-[#6C63FF]">Instagram:</span>{' '}
+                <span className={subHeadingColor}>Instagram:</span>{' '}
                 <a
                   href="https://instagram.com/imyashrajput_01"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`${textColor} hover:text-[#6C63FF] transition`}
+                  className={`${textColor} ${hoverColor} transition duration-300 ease-in-out`}
                 >
                   @imyashrajput_01
                 </a>
@@ -117,9 +122,7 @@ const Footer = ({ theme }) => {
 
           {/* CTA */}
           <div className="flex flex-col items-start">
-            <h4
-              className={`font-semibold mb-2 text-xs sm:text-sm uppercase tracking-wider ${headingColor}`}
-            >
+            <h4 className={`font-semibold mb-2 text-xs sm:text-sm uppercase tracking-wider ${subHeadingColor}`}>
               Let’s Connect
             </h4>
             <p className={`mb-3 text-xs sm:text-sm ${textColor}`}>
@@ -127,16 +130,16 @@ const Footer = ({ theme }) => {
             </p>
             <a
               href="mailto:imrajputyashraj@gmail.com"
-              className={`inline-block px-4 py-2 text-xs sm:text-sm font-medium rounded-lg bg-gradient-to-r ${accent} text-white shadow hover:shadow-lg transition`}
+              className={`inline-block px-4 py-2 text-xs sm:text-sm font-medium rounded-lg ${emailBtnClass} shadow hover:shadow-lg transition duration-300 ease-in-out`}
             >
-              Email Me
-            </a>
-            {/* Bottom Section */}
+              Email Me                                                                        
+             </a>
             <div className={`text-xs sm:text-sm leading-none mt-3 ${textColor}`}>
               <p>© {year} Yashraj. All rights reserved.</p>
               <p className="text-[10px] sm:text-xs">Built with React & Tailwind.</p>
             </div>
           </div>
+
         </div>
       </div>
     </footer>

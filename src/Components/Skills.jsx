@@ -45,8 +45,8 @@ const Skills = ({ theme }) => {
     }
   });
 
-  const bgColor = theme === 'dark' ? 'bg-[#060026]' : 'bg-[#F8F9FA]';
-  const headingColor = theme === 'dark' ? 'text-white' : 'text-[#2D2D2D]';
+  const bgColor = theme === 'dark' ? 'bg-[#000000]' : 'bg-[#E8DDC9]';
+  const headingColor = theme === 'dark' ? 'text-white' : 'text-black';
 
   return (
     <section
@@ -54,23 +54,49 @@ const Skills = ({ theme }) => {
       className={`min-h-[60vh] ${bgColor} flex flex-col items-center justify-center px-4 sm:px-6 lg:px-12 py-10 sm:py-14 lg:py-20 overflow-hidden`}
     >
       <div className="w-full max-w-6xl mx-auto">
-        <h2 className={`text-center text-3xl sm:text-4xl lg:text-5xl font-bold mb-8 sm:mb-12 ${headingColor}`}>
+        <h2
+          className={`text-center text-3xl sm:text-4xl lg:text-5xl font-bold mb-8 sm:mb-12 ${headingColor}`}
+        >
           Skills
         </h2>
 
         <div
-          className={`relative overflow-hidden rounded-2xl sm:rounded-3xl border ${theme === 'dark' ? 'border-white/10 bg-black' : 'border-gray-200 bg-white'} py-4 sm:py-6 lg:py-8`}
+          className={`relative overflow-hidden rounded-2xl sm:rounded-3xl border ${
+            theme === 'dark'
+              ? 'border-white/10 bg-black'
+              : 'border-gray-200 bg-white'
+          } py-4 sm:py-6 lg:py-8`}
           onMouseEnter={() => setPaused(true)}
           onMouseLeave={() => setPaused(false)}
         >
           {/* Fading edges */}
-          <div className={`pointer-events-none absolute inset-y-0 left-0 w-20 sm:w-28 lg:w-32 ${theme === 'dark' ? 'bg-gradient-to-r from-[#060026] via-[#060026aa] to-transparent' : 'bg-gradient-to-r from-white via-[#ffffffaa] to-transparent'}`} />
-          <div className={`pointer-events-none absolute inset-y-0 right-0 w-20 sm:w-28 lg:w-32 ${theme === 'dark' ? 'bg-gradient-to-l from-[#060026] via-[#060026aa] to-transparent' : 'bg-gradient-to-l from-white via-[#ffffffaa] to-transparent'}`} />
+          <div
+            className={`pointer-events-none absolute inset-y-0 left-0 w-20 sm:w-28 lg:w-32 ${
+              theme === 'dark'
+                ? 'bg-gradient-to-r from-black via-black/70 to-transparent'
+                : 'bg-gradient-to-r from-white via-white/70 to-transparent'
+            }`}
+          />
+          <div
+            className={`pointer-events-none absolute inset-y-0 right-0 w-20 sm:w-28 lg:w-32 ${
+              theme === 'dark'
+                ? 'bg-gradient-to-l from-black via-black/70 to-transparent'
+                : 'bg-gradient-to-l from-white via-white/70 to-transparent'
+            }`}
+          />
 
-          <div ref={containerRef} className="flex gap-6 sm:gap-8 lg:gap-10 will-change-transform select-none">
+          {/* Moving skills */}
+          <div
+            ref={containerRef}
+            className="flex gap-6 sm:gap-8 lg:gap-10 will-change-transform select-none"
+          >
             <div ref={contentRef} className="flex gap-6 sm:gap-8 lg:gap-10">
-              {skills.map((s, i) => <SkillChip key={'a-' + i} skill={s} theme={theme} />)}
-              {skills.map((s, i) => <SkillChip key={'b-' + i} skill={s} theme={theme} />)}
+              {skills.map((s, i) => (
+                <SkillChip key={'a-' + i} skill={s} theme={theme} />
+              ))}
+              {skills.map((s, i) => (
+                <SkillChip key={'b-' + i} skill={s} theme={theme} />
+              ))}
             </div>
           </div>
         </div>
@@ -80,16 +106,27 @@ const Skills = ({ theme }) => {
 };
 
 const SkillChip = ({ skill, theme }) => (
-  <div className={`group relative flex flex-col items-center justify-center
+  <div
+    className={`group relative flex flex-col items-center justify-center
       min-w-[90px] sm:min-w-[130px] lg:min-w-[170px]
       px-2 sm:px-4 lg:px-5 py-3 sm:py-5 lg:py-6
-      rounded-xl sm:rounded-2xl border transition
-      ${theme === 'dark' ? 'bg-[#060026] border-white/10 text-white' : 'bg-white border-gray-200 text-[#2D2D2D]'}
+      rounded-xl sm:rounded-2xl border-2 transition-all duration-300
+      ${
+        theme === 'dark'
+          ? 'bg-black border-blue-500 text-white hover:border-red-500'
+          : 'bg-white border-blue-500 text-[#2D2D2D] hover:border-red-500'
+      }
       shadow-[0_3px_15px_-3px_rgba(0,0,0,0.4)]
-      hover:shadow-[0_6px_25px_-2px_rgba(108,99,255,0.5)]`}
+      hover:shadow-[0_6px_25px_-2px_rgba(255,0,0,0.5)]`}
   >
     <div className="relative w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 flex items-center justify-center">
-      <div className={`absolute inset-0 rounded-xl bg-gradient-to-br ${theme === 'dark' ? 'from-[#651AAC] to-[#FFD86D]' : 'from-[#6C63FF] to-[#FF6584]'} opacity-0 group-hover:opacity-100 blur-sm transition`} />
+      <div
+        className={`absolute inset-0 rounded-xl bg-gradient-to-br ${
+          theme === 'dark'
+            ? 'from-blue-500 to-red-500'
+            : 'from-blue-500 to-red-500'
+        } opacity-0 group-hover:opacity-20 blur-sm transition`}
+      />
       <img
         src={skill.img}
         alt={skill.name}
